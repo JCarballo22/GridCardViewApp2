@@ -22,7 +22,7 @@
             android:src="@mipmap/ic_launcher" />
 
         <TextView
-            android:id="@+id/tv_Nombre"
+            android:id="@+id/tv_Nombre2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/iv_Nombre"
@@ -35,7 +35,7 @@
             android:id="@+id/tv_Departamento"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/tv_Nombre"
+            android:layout_below="@id/tv_Nombre2"
             android:textSize="16sp"
             android:text="Departamento"
             android:padding="2dp"

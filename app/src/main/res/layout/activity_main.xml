@@ -13,8 +13,15 @@
 
         android:id="@+id/gv_Tabla"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="476dp"
         android:horizontalSpacing="4dp"
-        android:verticalSpacing="4dp"
-        android:numColumns="2"/>
+        android:numColumns="2"
+        android:verticalSpacing="4dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="btnSiguiente"
+        app:srcCompat="@android:drawable/ic_media_next" />
 </LinearLayout>

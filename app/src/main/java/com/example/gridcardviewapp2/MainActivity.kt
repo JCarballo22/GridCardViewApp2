@@ -1,11 +1,13 @@
 package com.example.gridcardviewapp2
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import android.widget.BaseAdapter
 import android.widget.GridView
 import android.widget.ImageView
@@ -22,7 +24,7 @@ class MainActivity : AppCompatActivity() {
     )
     var departamento = arrayListOf<String>(
         "Sonsonate",
-        "Caballas",
+        "Cabañas",
         "San Salvador",
         "La Paz"
     )
@@ -41,11 +43,45 @@ class MainActivity : AppCompatActivity() {
 
     )
 
+    var myImagenLista = ArrayList<ImgItems>()
+
+    var modificadorAdaptador:AdaptadorModificado? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        for(imagen in imagenesLista){
+            myImagenLista.add(imagen)
+        }
+
+        gvTabla = findViewById(R.id.gv_Tabla)
+
+        modificadorAdaptador = AdaptadorModificado(myImagenLista,this)
+        gvTabla?.adapter = modificadorAdaptador
+
+        gvTabla?.onItemClickListener = object : AdapterView.OnItemClickListener{
+            override fun onItemClick(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                var ventana:Intent = Intent(applicationContext,Detalle::class.java)
+                ventana.putExtra("imagen",imagenes.get(position))
+                ventana.putExtra("nombre",nombre.get(position))
+                ventana.putExtra("Departamento",departamento.get(position))
+                startActivity(ventana)
+            }
+
+        }
+
+    }
+
+    fun btnSiguiente(Vista:View){
+        var ventana:Intent = Intent(applicationContext,WebViewApp::class.java)
+        startActivity(ventana)
     }
 
 

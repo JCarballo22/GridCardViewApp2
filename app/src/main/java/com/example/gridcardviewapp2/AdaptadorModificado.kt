@@ -30,7 +30,7 @@ class AdaptadorModificado(
             vista = LayoutInflater.from(context).inflate(R.layout.fila_items,parent,false)
         }
         var imagenVista: ImageView = vista!!.findViewById(R.id.iv_Nombre)
-        var tvnombre: TextView = vista!!.findViewById(R.id.tv_Nombre)
+        var tvnombre: TextView = vista!!.findViewById(R.id.tv_Nombre2)
         var tvdepartamento: TextView = vista!!.findViewById(R.id.tv_Departamento)
 
         val imgItems = imagenLista[position]
